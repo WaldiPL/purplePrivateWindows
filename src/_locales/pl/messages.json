@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Fioletowe Prywatne Okna"
+  },
+  "extensionDescription": {
+    "message": "Prywatne okna są teraz fioletowe."
+  },
+  "options": {
+    "message": "Opcje"
+  },
+  "theme": {
+    "message": "Motyw dla normalnych okien"
+  },
+  "defaultTheme": {
+    "message": "Domyślny"
+  },
+  "lightTheme": {
+    "message": "Jasny"
+  },
+  "darkTheme": {
+    "message": "Ciemny"
+  },
+  "lwtTheme": {
+    "message": "Obraz w tle"
+  }
+}

@@ -1,0 +1,32 @@
+{
+	"manifest_version":2,
+	"name":"__MSG_extensionName__",
+	"description":"__MSG_extensionDescription__",
+	"version":"1.0",
+	"default_locale":"en",
+	"icons":{
+		"48":"icon.svg"
+	},
+	"developer":{
+		"name":"WaldiPL",
+		"url":"https://github.com/WaldiPL/purplePrivateWindows"
+	},
+	"applications":{
+		"gecko":{
+			"id":"purplePrivateWindows@waldemar.b",
+			"strict_min_version":"57.0a1"
+		}
+	},
+	"permissions":[
+		"theme",
+		"storage"
+	],
+	"background":{
+		"scripts":["bg.js"]
+	},
+	"options_ui":{
+		"browser_style":true,
+		"page": "/options.html",
+		"open_in_tab": false
+	}
+}
