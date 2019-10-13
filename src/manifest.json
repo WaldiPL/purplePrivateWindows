@@ -2,7 +2,7 @@
 	"manifest_version":2,
 	"name":"__MSG_extensionName__",
 	"description":"__MSG_extensionDescription__",
-	"version":"1.0",
+	"version":"1.1",
 	"default_locale":"en",
 	"icons":{
 		"48":"icon.svg"
@@ -14,7 +14,7 @@
 	"applications":{
 		"gecko":{
 			"id":"purplePrivateWindows@waldemar.b",
-			"strict_min_version":"57.0a1"
+			"strict_min_version":"67.0a1"
 		}
 	},
 	"permissions":[
@@ -23,10 +23,5 @@
 	],
 	"background":{
 		"scripts":["bg.js"]
-	},
-	"options_ui":{
-		"browser_style":true,
-		"page": "/options.html",
-		"open_in_tab": false
 	}
 }

@@ -1,74 +1,63 @@
-browser.runtime.onInstalled.addListener(onInstalled);
-browser.windows.onCreated.addListener(updateTheme);
+"use strict";
 
-const themes={
-	light:{
-		images:{
-			headerURL:"",
-		},
-		colors:{
-			accentcolor:"#e3e4e6",
-			textcolor:"#18191a",
-			toolbar:"#f5f6f7",
-			toolbar_text:"#18191a",
-			toolbar_field:"#fff",
-			toolbar_field_text:"#000"
-		}
-	},
-	dark:{
-		images: {
-			headerURL: "",
-		},
-		colors: {
-			accentcolor:"#0c0c0d",
-			textcolor:"#f9f9fa",
-			toolbar:"#323234",
-			toolbar_text:"#f9f9fa",
-			toolbar_field:"#474749",
-			toolbar_field_text:"#f9f9fa"
-		}
-	},
-	priv:{
-		images: {
-			headerURL: "",
-		},
-		colors: {
-			accentcolor:"#25003e",
-			textcolor:"#fff",
-			toolbar:"#8000d7",
-			toolbar_text:"#fff",
-			toolbar_field:"#9933df",
-			toolbar_field_text:"#fff"
-		}
+const colors={
+	w0:"#ffffff",
+	w1:"#f9f9fa",
+	p3:"#c069ff",
+	p4:"#ad3bff",
+	p5:"#9400ff",
+	p6:"#8000d7",
+	p7:"#6200a4",
+	p8:"#440071",
+	p9:"#25003e"
+};
+
+const theme={
+	colors:{
+		button_background_active:"#b3b3b399",
+		button_background_hover:"#b3b3b366",
+		icons:colors.w0,
+		frame:colors.p9,
+
+		popup:colors.p7,
+		popup_border:colors.p8,
+		popup_highlight:colors.p5,
+		popup_highlight_text:colors.w0,
+		popup_text:colors.w1,
+
+		sidebar:colors.p7,
+		sidebar_border:colors.p8,
+		sidebar_highlight:colors.p5,
+		sidebar_highlight_text:colors.w0,
+		sidebar_text:colors.w1,
+
+		tab_background_separator:colors.p6,
+		tab_background_text:colors.w1,
+		tab_line:colors.p3,
+		tab_loading:colors.p3,
+		tab_selected:colors.p6,
+		tab_text:colors.w0,
+
+		toolbar:colors.p6,
+		toolbar_text:colors.w0,
+		toolbar_bottom_separator:colors.p8,
+		toolbar_top_separator:colors.p8,
+		toolbar_vertical_separator:colors.p7,
+
+		toolbar_field:colors.p4,
+		toolbar_field_focus:colors.p3,
+		toolbar_field_border:colors.p8,
+		toolbar_field_border_focus:colors.p8,
+		toolbar_field_separator:colors.p3,
+		toolbar_field_text:colors.w1,
+		toolbar_field_text_focus:colors.w0
 	}
 };
 
-function onInstalled(details){
-	if(details.reason==="install"){
-		browser.storage.local.set({theme:"default"});
-		browser.runtime.openOptionsPage();
-	}
-}
-
 function updateTheme(win){
 	if(win.incognito){
-		browser.theme.update(win.id,themes["priv"]);
-		updateCurrentWindows();
+		browser.theme.update(win.id,theme);
 	}
 }
 
-function updateCurrentWindows(){
-	browser.storage.local.get("theme").then(result=>{
-		if(result.theme==="lwt")return;
-		browser.windows.getAll().then(wins=>{
-			wins.forEach(win=>{
-				if(!win.incognito){
-					if(result.theme==="default")
-						browser.theme.reset(win.id);
-					else
-						browser.theme.update(win.id,themes[result.theme]);
-				}
-			});
-		});
-	});
-}
+browser.windows.onCreated.addListener(updateTheme);

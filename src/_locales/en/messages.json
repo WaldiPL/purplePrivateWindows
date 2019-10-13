@@ -3,24 +3,6 @@
     "message": "Purple Private Windows"
   },
   "extensionDescription": {
-    "message": "Private windows are now purple."
-  },
-  "options": {
-    "message": "Options"
-  },
-  "theme": {
-    "message": "Theme for normal windows"
-  },
-  "defaultTheme": {
-    "message": "Deafult"
-  },
-  "lightTheme": {
-    "message": "Light"
-  },
-  "darkTheme": {
-    "message": "Dark"
-  },
-  "lwtTheme": {
-    "message": "Background image"
+    "message": "Windows in private mode have a purple theme. Other windows do not change their appearance."
   }
 }

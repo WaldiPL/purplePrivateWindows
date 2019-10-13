@@ -5,7 +5,7 @@ Private windows are now purple.
 ![](screenshots/1.png)
 
 ## Requirements
-- Firefox 57+
+- Firefox 67+
 
 ## Permissions
 - Theme
